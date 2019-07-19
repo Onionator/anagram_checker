@@ -13,7 +13,7 @@ describe('anagram?') do
     expect(test_word.anagram?("RatS")).to(eq(true))
   end
   it('will return "These words are antigrams" if 2 words are antigrams. They must also be the same length.') do
-    expect(test_word.anagram?("feeding")).to(eq("These words are antigrams"))
+    expect(test_word.anagram?("feeding")).to(eq(false))
   end
 end
 describe('anagram?') do

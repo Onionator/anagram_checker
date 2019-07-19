@@ -14,9 +14,11 @@ class Anagram
       word_holder.sub!(second_word[chr], "")
     }
     if word_holder == "" && @first_word.length == second_word.length
+      puts "These phrases are anigrams."
       return true
     elsif word_holder == @first_word
-      return "These words are antigrams"
+      puts "These phrases are antigrams."
+      return false
     else
       word_holder.each_char { |chr|
         @first_word.sub!(word_holder[chr], "")
@@ -38,4 +40,7 @@ class Anagram
   end
 end
 
-p Anagram.new(gets.chomp).anagram?(gets.chomp)
+puts "Enter the first word or phrase to test if it is anagram material."
+input = Anagram.new(gets.chomp)
+puts "Enter the second word or phrase you think might be an anagram."
+puts "return: #{input.anagram?(gets.chomp)}."
