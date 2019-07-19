@@ -5,6 +5,8 @@ class String
     delete!("!@#${%^&*()}_+=[]|:;\"'<,>.?/")
     word.delete!("!@#${%^&*()}_+=[]|:;\"'<,>.?/")
     if self.length == word.length
+    downcase!()
+    word.downcase!()
     word.each_char { |chr|
       sub!(word[chr], "")
     }
