@@ -1,20 +1,19 @@
 require 'pry'
 
 class String
-  def anagram?(word)
+  def anagram?(second_word)
     delete!("!@#${%^&*()}_+=[]|:;\"'<,>.?/")
-    word.delete!("!@#${%^&*()}_+=[]|:;\"'<,>.?/")
-    if self.length == word.length
     downcase!()
-    word.downcase!()
-    word.each_char { |chr|
-      sub!(word[chr], "")
+    first_word = self.chomp
+    second_word.delete!("!@#${%^&*()}_+=[]|:;\"'<,>.?/")
+    second_word.downcase!()
+    second_word.each_char { |chr|
+      first_word.sub!(second_word[chr], "")
     }
-  else
-    return false
-  end
-    if self == ""
+    if first_word == "" && self.length == second_word.length
       return true
+    elsif self == first_word
+      return "These words are antigrams"
     else
       return false
     end
