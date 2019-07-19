@@ -16,3 +16,9 @@ describe('anagram?') do
     expect(test_word.anagram?("feeding")).to(eq("These words are antigrams"))
   end
 end
+describe('anagram?') do
+  test_word = Anagram.new("this phrase")
+  it('will return true if the 2 multi-word phrases are anigrams') do
+    expect(test_word.anagram?("has her spit")).to(eq(true))
+  end
+end

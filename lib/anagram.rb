@@ -5,10 +5,10 @@ class Anagram
     @first_word = input
   end
   def anagram?(second_word)
-    @first_word.delete!("!@#${%^&*()}_+=[]|:;\"'<,>.?/")
+    @first_word.delete!("!@#${%^&*()}_+=[]|:;\"'<,>.?/ ")
     @first_word.downcase!()
     word_holder = @first_word.chomp
-    second_word.delete!("!@#${%^&*()}_+=[]|:;\"'<,>.?/")
+    second_word.delete!("!@#${%^&*()}_+=[]|:;\"'<,>.?/ ")
     second_word.downcase!()
     second_word.each_char { |chr|
       word_holder.sub!(second_word[chr], "")
