@@ -11,9 +11,9 @@ class Anagram
     second_word.delete!("!@#${%^&*()}_+=[]|:;\"'<,>.?/ ")
     second_word.downcase!()
     second_word.each_char { |chr|
-      word_holder.sub!(second_word[chr], "")
+    word_holder.sub!(second_word[chr], "")
     }
-    if word_holder == "" && @first_word.length == second_word.length
+    if word_holder == "" && @first_word.length == second_word.length && word_holder.sub(/aeiouy/, "") ? true : false
       puts "These phrases are anigrams."
       return true
     elsif word_holder == @first_word
