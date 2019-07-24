@@ -1,5 +1,3 @@
-require 'pry'
-
 class Anagram
   def initialize(input)
     @first_word = input
