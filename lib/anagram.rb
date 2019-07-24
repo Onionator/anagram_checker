@@ -40,6 +40,7 @@ class Anagram
   end
 end
 
+
 puts "Enter the first word or phrase to test if it is anagram material."
 input = Anagram.new(gets.chomp)
 puts "Enter the second word or phrase you think might be an anagram."
