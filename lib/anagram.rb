@@ -13,7 +13,7 @@ class Anagram
     second_word.each_char { |chr|
     word_holder.sub!(second_word[chr], "")
     }
-    if word_holder == "" && @first_word.length == second_word.length && word_holder.sub(/aeiouy/, "") ? true : false
+    if word_holder == "" && @first_word.length == second_word.length && @first_word.is_word? && second_word.is_word?
       puts "These phrases are anigrams."
       return true
     elsif word_holder == @first_word
@@ -37,6 +37,9 @@ class Anagram
       puts "These phrases aren't anagrams, but they both contain: #{output}"
         return false
     end
+  end
+  def is_word?
+    sub(/aeiouy/, "") ? true : false
   end
 end
 
